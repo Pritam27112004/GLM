@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#F7FAFC] text-[#172033] antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Custom institutional scrollbars */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F1F5F9;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94A3B8;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-white bg-[#0B2A4A] hover:bg-[#143C66] active:bg-[#071A2E] rounded-lg transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-[#19A7CE] focus:ring-offset-1;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-[#0B2A4A] bg-[#EAF5FB] hover:bg-[#D4EDFA] active:bg-[#BDE4F8] rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-[#1976D2];
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-[#172033] bg-white border border-[#E2E8F0] hover:bg-[#F8FAFC] active:bg-[#F1F5F9] rounded-lg transition-colors shadow-subtle focus:outline-none focus:ring-2 focus:ring-[#19A7CE];
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-semibold text-white bg-[#F28C28] hover:bg-[#E07B18] active:bg-[#C96B0E] rounded-lg transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-[#F28C28] focus:ring-offset-1;
+  }
+
+  .btn-success {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-white bg-[#2E9D59] hover:bg-[#258249] rounded-lg transition-colors shadow-sm;
+  }
+
+  .card-institutional {
+    @apply bg-white rounded-xl border border-[#E2E8F0] shadow-subtle hover:shadow-card transition-shadow duration-200;
+  }
+
+  .badge-institutional {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold;
+  }
+}
+
+/* Simulated hardware pulse animation */
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.15); opacity: 0.4; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2.5s infinite ease-in-out;
+}
